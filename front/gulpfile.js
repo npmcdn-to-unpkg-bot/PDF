@@ -5,14 +5,14 @@ var embedTemplates = require('gulp-angular-embed-templates');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 
-// gulp.task('slim', function () {
-//   return gulp.src("../app/views/components/*.slim")
-//     .pipe(slim({
-//       options: ["attr_list_delims={'~' => '~'}", "code_attr_delims={'~' => '~'}"]
-//     }))
-//     .pipe(gulp.dest('../public/javascript/tasa/components/components/'))
-// });
-//
+ gulp.task('slim', function () {
+   return gulp.src("../app/views/components/*.slim")
+     .pipe(slim({
+       options: ["attr_list_delims={'~' => '~'}", "code_attr_delims={'~' => '~'}"]
+     }))
+     .pipe(gulp.dest('../public/javascript/tasa/components/components/'))
+ });
+
  gulp.task('replaceName', function () {
     return gulp.src('../public/javascript/pdf2csv/components/components/*.html')
      .pipe(replaceName(/\.html.html/g, '.html'))
